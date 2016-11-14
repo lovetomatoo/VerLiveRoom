@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ghx.app.weiget.KeyboardLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/keyboardLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.ghx.app.weiget.ShowRoomInfoView
+            android:id="@+id/showRoomInfoView"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_rank"
+            android:layout_width="72dp"
+            android:layout_height="23dp"
+            android:layout_below="@+id/showRoomInfoView"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_kaibo_num_back"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="贡献榜"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/show_rank_cicle_selector" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_roomid"
+            android:layout_width="wrap_content"
+            android:layout_height="22.5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="52.5dp"
+            android:background="@drawable/rect_show_corners_left"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="#70FFFFFF"
+            android:textSize="11sp" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="17.5dp"
+            android:src="@mipmap/show_close_normal"
+            android:visibility="gone" />
+
+        <com.ghx.app.weiget.ShowBottomView
+            android:id="@+id/showBottomView"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+
+        <com.ghx.app.weiget.ShowPeriscopeLayout
+            android:id="@+id/showPeriscopeLayout"
+            android:layout_width="111dp"
+            android:layout_height="260dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="43dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_webview_container"
+            android:layout_width="match_parent"
+            android:layout_height="142dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="52dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/showPeriscopeLayout"
+            android:orientation="horizontal" />
+
+
+
+    </RelativeLayout>
+</com.ghx.app.weiget.KeyboardLinearLayout>

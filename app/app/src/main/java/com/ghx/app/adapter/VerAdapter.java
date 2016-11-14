@@ -3,8 +3,10 @@ package com.ghx.app.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import com.ghx.app.fragment.ContentFragment;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by guo_hx on 2016/11/3.15:48
@@ -12,38 +14,22 @@ import java.util.List;
 
 public class VerAdapter extends FragmentPagerAdapter {
 
-    private List<Fragment> mListFragments = new ArrayList<>();
+    private ArrayList<Map<String, Object>> mList = new ArrayList<>();
 
-    public VerAdapter(FragmentManager fm, List<Fragment> list) {
+    public VerAdapter(FragmentManager fm, ArrayList<Map<String, Object>> list) {
         super(fm);
-        this.mListFragments = list;
+        this.mList = list;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return mListFragments.get(position);
+//        return ContentFragment.newInstance(position % mList.size(), mList);
+        return ContentFragment.newInstance(10, mList);
     }
 
     @Override
     public int getCount() {
-        return mListFragments.size();
+        return Integer.MAX_VALUE;
     }
 
-
-    public static class Holder {
-        private final List<Fragment> fragments = new ArrayList<>();
-        private FragmentManager manager;
-        public Holder(FragmentManager manager) {
-            this.manager = manager;
-        }
-
-        public Holder add(Fragment f) {
-            fragments.add(f);
-            return this;
-        }
-
-        public VerAdapter set() {
-            return new VerAdapter(manager, fragments);
-        }
-    }
 }

@@ -4,12 +4,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.ghx.app.R;
 import com.ghx.app.adapter.VerAdapter;
-import com.ghx.app.fragment.ContentFragment;
-import com.ghx.app.weiget.VerticalViewPager;
+import com.ghx.app.weiget.VerScrollView;
+import java.util.ArrayList;
+import java.util.Map;
 
 public class VerLiveActivity extends AppCompatActivity {
 
-    private VerticalViewPager mVerViewPager;
+    private VerScrollView mVerViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,18 +19,23 @@ public class VerLiveActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ver_live);
 
         initAllViews();
-
     }
 
     private void initAllViews() {
-        mVerViewPager = (VerticalViewPager) findViewById(R.id.ver_viewpager);
-        mVerViewPager.setAdapter(new VerAdapter.Holder(getSupportFragmentManager())
-                .add(ContentFragment.newInstance("1", 1))
-                .add(ContentFragment.newInstance("2", 2))
-                .add(ContentFragment.newInstance("3", 3))
-                .add(ContentFragment.newInstance("4", 4))
-                .add(ContentFragment.newInstance("5", 5))
-                .set()
-        );
+
+        ArrayList<Map<String, Object>> list =  getDataFromServer();
+
+        mVerViewPager = (VerScrollView) findViewById(R.id.ver_viewpager);
+        VerAdapter adapter = new VerAdapter(getSupportFragmentManager(), list);
+        mVerViewPager.setAdapter(adapter);
     }
+
+    private ArrayList<Map<String, Object>> getDataFromServer() {
+
+
+
+        return null;
+    }
+
+
 }
