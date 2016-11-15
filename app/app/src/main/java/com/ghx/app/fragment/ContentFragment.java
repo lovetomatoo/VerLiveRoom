@@ -120,13 +120,10 @@ public class ContentFragment extends Fragment {
 
             mVidioView = new VideoView(getContext());
 
-            ViewGroup.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
-                    FrameLayout.LayoutParams.MATCH_PARENT);
 
-            mVidioView.setLayoutParams(layoutParams);
 
             Uri uri = Uri.parse("http://dianbo.ws.videoappjg.inhand.tv/lizi-z11434641479087702--20161114104158.mp4");
-            mVidioView.setMediaController(new MediaController(getContext()));
+//            mVidioView.setMediaController(new MediaController(getContext()));
             mVidioView.setVideoURI(uri);
             mVidioView.start();
             mVidioView.requestFocus();
