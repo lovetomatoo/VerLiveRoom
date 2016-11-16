@@ -1,9 +1,12 @@
 package com.ghx.app.activity;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 import com.ghx.app.R;
 import com.ghx.app.adapter.VerAdapter;
+import com.ghx.app.utils.StatusBarUtils;
 import com.ghx.app.weiget.VerScrollView;
 import java.util.ArrayList;
 import java.util.Map;
@@ -14,14 +17,18 @@ public class VerLiveActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_ver_live);
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         initAllViews();
     }
 
     private void initAllViews() {
+
+        StatusBarUtils.setStatusbarTransparent(getWindow(), true);
 
         ArrayList<Map<String, Object>> list =  getDataFromServer();
 

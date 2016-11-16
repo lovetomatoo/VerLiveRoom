@@ -1,15 +1,19 @@
 package com.ghx.app.fragment;
 
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.widget.FrameLayout;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.MediaController;
+import android.widget.Toast;
 import android.widget.VideoView;
 import com.ghx.app.R;
 import com.ghx.app.weiget.VerLiveShowView;
@@ -122,10 +126,19 @@ public class ContentFragment extends Fragment {
 
 
             Uri uri = Uri.parse("http://dianbo.ws.videoappjg.inhand.tv/lizi-z11434641479087702--20161114104158.mp4");
-//            mVidioView.setMediaController(new MediaController(getContext()));
+            MediaController controller = new MediaController(getContext());
+            controller.setVisibility(View.INVISIBLE);
+            mVidioView.setMediaController(controller);
             mVidioView.setVideoURI(uri);
             mVidioView.start();
             mVidioView.requestFocus();
+            mVidioView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    Log.i("guohongxin", "onCompletion");
+                    Toast.makeText(getContext(), "dsadas", Toast.LENGTH_SHORT).show();
+                }
+            });
 
             buttomFrameLayout.addView(mVidioView);
 
