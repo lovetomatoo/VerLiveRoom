@@ -72,8 +72,6 @@ public class VerLiveShowView extends LinearLayout implements View.OnClickListene
         switch (v.getId()) {
             case R.id.ll_rank:
 
-                Map<String, String> map = new HashMap<>();
-                map.put("7_RoomButtonClick", "贡献榜");
 
                 break;
             case R.id.iv_close:

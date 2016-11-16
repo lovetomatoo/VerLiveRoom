@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.MediaController;
 import android.widget.VideoView;
 import com.ghx.app.R;
 import com.ghx.app.weiget.VerLiveShowView;

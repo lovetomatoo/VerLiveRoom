@@ -49,6 +49,7 @@
         </LinearLayout>
 
         <TextView
+            android:text="房间号：666666"
             android:id="@+id/tv_roomid"
             android:layout_width="wrap_content"
             android:layout_height="22.5dp"
