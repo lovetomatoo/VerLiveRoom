@@ -11,6 +11,15 @@ import com.ghx.app.weiget.VerScrollView;
 import java.util.ArrayList;
 import java.util.Map;
 
+/**
+ * 全民要 7*14了！！！
+ * 草草草
+ * 不尊重技术的公司，一定不会长久
+ *
+ * 这个项目  忙完再写吧
+ *
+ */
+
 public class VerLiveActivity extends AppCompatActivity {
 
     private VerScrollView mVerViewPager;
